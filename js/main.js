@@ -2,11 +2,16 @@ const robotron = document.querySelector("#robotron") // usamos uma const para gu
 
 robotron.addEventListener("click", dizOi) // usamos a variável dentro do escutador de eventos
 
+robotron.addEventListener("click", function() { //função anonima só sera executada nesse momento, nao podera ser chamada nesse momento, nesse evento.
+    console.log("Cliquei no Robô.")
+})
+
 function dizOi() {     
     console.log("oi")
+    console.log("Bem vindo ao Robotron 2000")
 }
 
-const subtrair = document.querySelector("#subtrair")
+/* const subtrair = document.querySelector("#subtrair")
 const somar = document.querySelector("#somar")
 const braco = document.querySelector("#braco")
 
@@ -31,4 +36,4 @@ function manipulaDados(operacao) {
         braco.value = parseInt(braco.value) + 1
     }
     
-}
+} */
