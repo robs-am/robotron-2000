@@ -12,21 +12,34 @@ function dizOi(nome) {
 }
 dizOi("Roberta") */
 
+
+
+
 const subtrair = document.querySelector('#subtrair')
 const somar = document.querySelector('#somar')
 const braco = document.querySelector('#braco')
-
-somar.addEventListener("click", () => {manipulaDados("somar")})
-    
+const controle = document.querySelectorAll('.controle-ajuste') // variável que buscará o nó para manipular todos os controles. Nós são arrays e o melhor método de função para arrays é a foreach:
 
 
-subtrair.addEventListener("click", () => {manipulaDados("subtrair")})
+
+controle.forEach( (elemento) => {
+    elemento.addEventListener("click", (evento) => {
+        manipulaDados(evento.target.textContent)
+    })         
+})
+
+// foreach: esse método retornará os e confirmará os 10 elementos que precisaremos no browswer
+//depois adicionamos o addEventListener
+//por último adicionamos o evento na funçao anonima para que o console nos informe o que esta acontecendo quando é clicado e posteriormente target
+//adicionamos textContext para o console entender o somar e subtrair
+
+
    
 
 
 function manipulaDados(operacao) {          //terceiriza a validação em uma outra função para evitar repeti-la. Trazendo assim toda a logica de manipulação de dados para um único lugar. Como consequencia, agora a  unica responsabilidade do Eventlistener será a função click//
     
-        if(operacao === "subtrair") {
+        if(operacao === "-") {
             braco.value = parseInt(braco.value) -1
         } else {
             braco.value = parseInt(braco.value) +1
