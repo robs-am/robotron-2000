@@ -10,5 +10,5 @@ const calculo = document.querySelector('#calcular');
 const resultado = document.querySelector('.resultado');
 
 calculo.addEventListener('click', () => {
-    resultado.innerHTML = 'Fui clicado!'
+    resultado.innerHTML = 'Notas Enviadas com Sucesso!'
 })

@@ -2,7 +2,7 @@
 
 robotron.addEventListener("click", dizOi) // usamos a variável dentro do escutador de eventos
 
-robotron.addEventListener("click", function() { //função anonima só sera executada nesse momento, nao podera ser chamada nesse momento, nesse evento.
+robotron.addEventListener("click", function() { //função anonima só sera executada nesse momento, só podera ser chamada nesse momento, nesse evento.
     console.log("Cliquei no Robô.")
 })
 
@@ -12,39 +12,24 @@ function dizOi(nome) {
 }
 dizOi("Roberta") */
 
-const bracoMais = document.querySelector('#somar')
-const bracoMenos = document.querySelector('#subtrair')
-const bracoValor = document.querySelector('#braco')
+const subtrair = document.querySelector('#subtrair')
+const somar = document.querySelector('#somar')
+const braco = document.querySelector('#braco')
 
-bracoMais.addEventListener('click', () => {
-    braco.value++;
-})
-
-bracoMenos.addEventListener('click', () => {
-    if(braco.value > 0) {
-        braco.value--; } 
-    else {
-        alert("Não é possivel ter um valor negativo de peças.")
-    }
-})
-
-/* controle.forEach( (elemento) => {
-    elemento.addEventListener("click", (evento) => {
-        manipulaDados(evento.target.text)
-    })
-})
-
-const controle = document.querySelectorAll(".controle-ajuste")
-
-somar.addEventListener("click", (evento) => {manipulaDados("somar")}) //toda vez que clicar no somar +1
-
-subtrair.addEventListener("click", (evento) => {manipulaDados("subtrair")}) //toda vez que clicar no subtrair -1
-
-function manipulaDados(operacao) {
-    if(operacao === "-") {
-        braco.value = parseInt(braco.value) - 1
-    } else {
-        braco.value = parseInt(braco.value) + 1
-    }
+somar.addEventListener("click", () => {manipulaDados("somar")})
     
-}  */
+
+
+subtrair.addEventListener("click", () => {manipulaDados("subtrair")})
+   
+
+
+function manipulaDados(operacao) {          //terceiriza a validação em uma outra função para evitar repeti-la. Trazendo assim toda a logica de manipulação de dados para um único lugar. Como consequencia, agora a  unica responsabilidade do Eventlistener será a função click//
+    
+        if(operacao === "subtrair") {
+            braco.value = parseInt(braco.value) -1
+        } else {
+            braco.value = parseInt(braco.value) +1
+        }    
+    
+    }
