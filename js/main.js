@@ -15,6 +15,15 @@ dizOi("Roberta") */
 
 //FORÇA ROBOTRON//
 
+
+
+
+
+const subtrair = document.querySelector('#subtrair')
+const somar = document.querySelector('#somar')
+const braco = document.querySelector('#braco')
+const controle = document.querySelectorAll('[data-controle]') // variável que buscará o nó para manipular todos os controles. Nós são arrays e o melhor método de função para arrays é a foreach:
+const estatisticas = document.querySelectorAll('[data-estatisticas]')
 const pecas = {
     "bracos": {
         "forca": 29,
@@ -48,15 +57,6 @@ const pecas = {
         "velocidade": -2
     }
 }
-
-
-
-const subtrair = document.querySelector('#subtrair')
-const somar = document.querySelector('#somar')
-const braco = document.querySelector('#braco')
-const controle = document.querySelectorAll('[data-controle]') // variável que buscará o nó para manipular todos os controles. Nós são arrays e o melhor método de função para arrays é a foreach:
-
-
 
 controle.forEach( (elemento) => {
     elemento.addEventListener("click", (evento) => {
