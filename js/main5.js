@@ -13,6 +13,10 @@ function dizOi(nome) {
 dizOi("Roberta") */
 
 
+//FORÇA ROBOTRON//
+
+
+
 
 
 const subtrair = document.querySelector('#subtrair')
@@ -87,8 +91,10 @@ function manipulaDados(operacao, controle) {
     //No metodo forEach nao queremos buscar o controle-contador do documento inteiro e sim apenas do controle, então precisamos passar isso para o método atraves do parametro evento.target.parentNode na funcao manipulaDados
 
     function atualizaEstatistica(peca) {
-        estatistica.forEach( (elemento ) => {
-            elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
-        })
-    }
+      
+        estatistica.forEach( (elemento) => {
+        elemento.textContext = parseInt(elemento.textContext) + pecas[peca][elemento.dataset.estatistica]
+          
+    })
+}
     //ao clicar em um elemento (ex: braço) percorrerá também as estatisticas de cada um deles
